@@ -10,7 +10,8 @@ export const fetchData = async () => {
   };
   try {
     const res = await axios.get('https://icanhazdadjoke.com/search', config);
-    // console.log(this.state.jokes);
     return res;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };

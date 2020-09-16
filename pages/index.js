@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import Test from '../components/test';
+import AllJokes from '../components/allJokes';
 import { fetchData } from '../api/index';
 import React, { Component } from 'react';
 
@@ -11,10 +11,14 @@ export default class index extends Component {
 
   async componentDidMount() {
     const fetchedData = await fetchData();
-    console.log(fetchedData);
-    this.setState({ jokes: fetchedData });
+    this.setState({ jokes: fetchedData.data.results });
+    // console.log(this.state.jokes);
   }
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <AllJokes jokes={this.state.jokes} />
+      </div>
+    );
   }
 }
