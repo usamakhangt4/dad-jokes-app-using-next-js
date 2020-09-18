@@ -10,11 +10,8 @@ export default function allJokes({ jokes }) {
           //    <Loader/>
           <h1>loading...</h1>
         ) : (
-
-            // console.log(jokes);
-          Object.keys(jokes).map((i) => {
-              console.log(i)
-          })
+          // console.log(jokes)
+          Object.keys(jokes).map((joke) => <li key={joke}>{joke}</li>)
         )}
       </ul>
     </React.Fragment>
