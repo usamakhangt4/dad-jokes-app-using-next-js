@@ -11,7 +11,7 @@ export default function allJokes({ jokes }) {
           <h1>loading...</h1>
         ) : (
           // console.log(jokes)
-          jokes.map((joke) => joke.id)
+          jokes.map((joke) => <li key={joke.id}>{joke.joke}</li>)
         )}
       </ul>
     </React.Fragment>
