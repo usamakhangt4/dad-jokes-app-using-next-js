@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import AllJokes from '../components/allJokes';
 import { fetchData } from '../api/index';
 import React, { Component } from 'react';
-
+import Layout from '../components/layout';
 export default class index extends Component {
   state = {
     jokes: [],
@@ -16,9 +15,9 @@ export default class index extends Component {
   }
   render() {
     return (
-      <div>
+      <Layout>
         <AllJokes jokes={this.state.jokes} />
-      </div>
+      </Layout>
     );
   }
 }

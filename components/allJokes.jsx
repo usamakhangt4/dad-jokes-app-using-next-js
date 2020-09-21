@@ -10,7 +10,6 @@ export default function allJokes({ jokes }) {
           //    <Loader/>
           <h1>loading...</h1>
         ) : (
-          // console.log(jokes)
           jokes.map((joke) => <li key={joke.id}>{joke.joke}</li>)
         )}
       </ul>
